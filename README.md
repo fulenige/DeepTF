@@ -1,4 +1,5 @@
 ## TF Regulatory Code
+
  Deciphering TF Regulatory Code for Gene Expression
 
 ## 1. Overview
@@ -7,23 +8,38 @@ Gene-expression prediction is not the focus—it is merely a downstream sanity c
 
 ## 2. Repository Layout
 TF-Regulatory-Code/
+
 ├── overlaps.py                 # 1️⃣ TF-promoter overlap detection
+
 ├── coding.py                   # 2️⃣ Encode overlaps → raw_data.txt
+
 ├── GM12878/                    # Example cell line (K562 mirrored)
+
 │   ├── raw_data.txt            # Encoded table: Gene  Sequence  TPM …
+
 │   ├── use_data.csv            # One-hot + TF-strength model input
+
 │   ├── dataset.py              # PyTorch Dataset
+
 │   ├── model.py                # CNN architecture
+
 │   ├── train.py                # Training / 5-fold-CV / ROC plots
+
 │   └── utils.py                # Shared utilities
+
 ├── TF_combination_patterns/    # 3️⃣ Decoding: motif extraction
+
 │   ├── extract_motif.py        # Main script
+
 │   ├── logo.R                  # Optional sequence-logo plotting
+
 │   └── utils.py
+
 └── README.md                   # This file
 
 ## 3. Quick Start
 3.1 Data Preparation
+
 (1) Provide three BED files:
 promoters.bed  (promoter coordinates per gene)
 TSS.bed        (TSS positions with TF names)
@@ -41,6 +57,7 @@ python utils.py         # raw_data.txt → one-hot → use_data.csv
 python train.py
 
 3.3 Extract TF-Combination Motifs
+
 cd ../TF_combination_patterns
 python utils.py \
 python extract_motif.py \
