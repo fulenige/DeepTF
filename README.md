@@ -9,33 +9,33 @@ Gene-expression prediction is not the focus—it is merely a downstream sanity c
 ## 2. Repository Layout
 TF-Regulatory-Code/
 
-├── overlaps.py                 # 1️⃣ TF-promoter overlap detection
+├── overlaps.py                         # 1️⃣ TF-promoter overlap detection
 
-├── coding.py                   # 2️⃣ Encode overlaps → raw_data.txt
+├── coding.py                           # 2️⃣ Encode overlaps → raw_data.txt
 
-├── GM12878/                    # Example cell line (K562 mirrored)
+├── GM12878/                            # Example cell line (K562 mirrored)
 
-│   ├── raw_data.txt            # Encoded table: Gene  Sequence  TPM …
+│       ├── raw_data.txt                # Encoded table: Gene  Sequence  TPM …
 
-│   ├── use_data.csv            # One-hot + TF-strength model input
+│       ├── use_data.csv                # One-hot + TF-strength model input
 
-│   ├── dataset.py              # PyTorch Dataset
+│       ├── dataset.py                  # PyTorch Dataset
 
-│   ├── model.py                # CNN architecture
+│       ├── model.py                    # CNN architecture
 
-│   ├── train.py                # Training / 5-fold-CV / ROC plots
+│       ├── train.py                    # Training / 5-fold-CV / ROC plots
 
-│   └── utils.py                # Shared utilities
+│       └── utils.py                    # Shared utilities
 
-├── TF_combination_patterns/    # 3️⃣ Decoding: motif extraction
+├── TF_combination_patterns/            # 3️⃣ Decoding: motif extraction
 
-│   ├── extract_motif.py        # Main script
+│       ├── extract_motif.py            # Main script
 
-│   ├── logo.R                  # Optional sequence-logo plotting
+│       ├── logo.R                      # Optional sequence-logo plotting
 
-│   └── utils.py
+│       └── utils.py
 
-└── README.md                   # This file
+└── README.md                           # This file
 
 ## 3. Quick Start
 3.1 Data Preparation
